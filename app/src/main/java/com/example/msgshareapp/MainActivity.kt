@@ -1,5 +1,6 @@
 package com.example.msgshareapp
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
@@ -20,6 +21,22 @@ class MainActivity : AppCompatActivity() {
             //press alt+enter if error is there
 
             Toast.makeText(this,"You clicked the button.",Toast.LENGTH_SHORT).show()
+
+        }
+
+        button2.setOnClickListener {
+
+            val message: String= edUserMsg.text.toString()
+            Toast.makeText(this,message,Toast.LENGTH_SHORT).show()
+
+            //navigate from main activity to second activity
+
+            //intent will be used:- an intention to do something
+
+            val intent=Intent(this,SecondActivity::class.java) //concept of kotlin reflection
+            startActivity(intent)
+
+
 
         }
     }
